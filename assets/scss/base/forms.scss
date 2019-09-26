@@ -1,10 +1,13 @@
 .field {
+  display: flex;
+  flex-direction: column;
+
   input[type="text"],
   input[type="password"],
   select {
     @include gutterize("margin-bottom");
 
-    border: solid 2px color("grey", "lighten-3");
+    border: solid 2px color("grey", "lighten-2");
     border-radius: 5px;
     height: 3rem;
     width: 100%;
@@ -42,6 +45,10 @@
     font-size: 1rem;
     opacity: 0.5;
   }
+
+  &.check {
+    flex-direction: row;
+  }
 }
 
 .checkbox {
@@ -63,7 +70,7 @@
   }
 
   &.checked {
-    background-color: $primary2-color;
+    background-color: $primary3-color;
 
     i {
       color: #fff;

@@ -5,3 +5,4 @@ resources
 static/js
 elm-stuff
 public
+.cache

@@ -10,14 +10,16 @@
 
     {{ partial "favicons" . }}
 
-    {{ $base_styles := resources.Get "scss/main.scss" | resources.ToCSS $options }}
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    {{ $base_styles := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.PostCSS  }}
     <link
       rel="stylesheet"
       href="{{ $base_styles.Permalink }}"
       media="screen"
     />
 
-    {{ $home_styles := resources.Get "scss/home.scss" | resources.ToCSS $options }}
+    {{ $home_styles := resources.Get "scss/home.scss" | resources.ToCSS $options | resources.PostCSS }}
 
     <link
       rel="stylesheet"
@@ -30,13 +32,11 @@
 
     <div class="main home">
       <div class="section">
-        <div id="hello"></div>
-
         {{ .Content }}
       </div>
     </div>
 
     {{ partial "footer.html" . }}
-    <script src="js/hello.js"></script>
+    <script src="js/demo.js"></script>
   </body>
 </html>
