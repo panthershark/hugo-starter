@@ -1,0 +1,42 @@
+{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules")) }}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ .Site.Title }}</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    {{ partial "favicons" . }}
+
+    {{ $base_styles := resources.Get "scss/main.scss" | resources.ToCSS $options }}
+    <link
+      rel="stylesheet"
+      href="{{ $base_styles.Permalink }}"
+      media="screen"
+    />
+
+    {{ $home_styles := resources.Get "scss/home.scss" | resources.ToCSS $options }}
+
+    <link
+      rel="stylesheet"
+      href="{{ $home_styles.Permalink }}"
+      media="screen"
+    />
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+
+    <div class="main home">
+      <div class="section">
+        <div id="hello"></div>
+
+        {{ .Content }}
+      </div>
+    </div>
+
+    {{ partial "footer.html" . }}
+    <script src="js/hello.js"></script>
+  </body>
+</html>

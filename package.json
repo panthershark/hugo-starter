@@ -1,0 +1,22 @@
+{
+  "author": "Tommy Messbauer",
+  "description": "Starter kit for a static website in Hugo",
+  "devDependencies": {
+    "materialize-css": "^1.0.0",
+    "node-elm-compiler": "^5.0.4",
+    "parcel-bundler": "^1.12.3",
+    "sanitize.css": "^11.0.0"
+  },
+  "license": "MIT",
+  "main": " ",
+  "name": "hugo-starter",
+  "private": false,
+  "repository": "git@github.com:doanythingfordethklok/hugo-starter.git",
+  "scripts": {
+    "build": "rm -rf public && yarn run build-js && hugo --minify",
+    "build-hello-component": "parcel build ./src/hello.js --no-source-maps --no-cache --out-dir ./static/js",
+    "build-js": "yarn run build-hello-component",
+    "dev": "yarn run build-js && hugo server -D"
+  },
+  "version": "1.0.0"
+}

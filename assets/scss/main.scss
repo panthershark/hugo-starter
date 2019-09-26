@@ -1,0 +1,41 @@
+@import "materialize-css/sass/components/color-variables";
+@import "sanitize.css/sanitize";
+@import "sanitize.css/typography";
+@import "./base/vars.scss";
+@import "./base/mixins.scss";
+@import "./base/type-scale.scss";
+
+// ------ Responsive font sizes as recommended by Material Design
+body {
+  background-color: color("grey", "lighten-5");
+  background-image: url("/bg-texture.png");
+  color: $off-black;
+  min-height: calc(100vh + 80px);
+
+  @media only screen and (min-width: 0) {
+    font-size: 14px;
+  }
+
+  @media only screen and (min-width: $medium-screen) {
+    font-size: 14.5px;
+  }
+
+  @media only screen and (min-width: $large-screen) {
+    font-size: 15px;
+  }
+}
+
+a {
+  color: $primary1-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $primary1-color;
+  }
+}
+
+@import "./base/btns.scss";
+@import "./base/header.scss";
+@import "./base/footer.scss";
+@import "./base/forms.scss";
+@import "./base/containers.scss";

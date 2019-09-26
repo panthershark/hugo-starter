@@ -1,0 +1,77 @@
+$button-color: $primary3-color !default;
+
+// BUTTONS - simplified version of these.
+// https://github.com/Dogfalo/materialize/blob/v1-dev/sass/components/_buttons.scss
+button,
+.btn {
+  @include zdepth($level: 1);
+  @include gutterize("margin-left", "margin-right");
+
+  border: none;
+  border-radius: 5px;
+  display: inline-flex;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 16px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent; // Gets rid of tap active state
+  color: #fff;
+  background-color: $button-color;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-out;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  outline: 0;
+
+  i {
+    font-size: 1.3rem;
+    line-height: inherit;
+    margin: auto 0;
+  }
+
+  &:focus {
+    background-color: darken($button-color, 10%);
+  }
+
+  &:hover {
+    @include zdepth($level: 1.5);
+    background-color: lighten($button-color, 5%);
+  }
+
+  // Disabled shared style
+  &.disabled {
+    $button-disabled-background: #dfdfdf;
+    $button-disabled-color: #9f9f9f;
+
+    pointer-events: none;
+    background-color: $button-disabled-background !important;
+    box-shadow: none;
+    color: $button-disabled-color !important;
+    cursor: default;
+    &:hover {
+      background-color: $button-disabled-background !important;
+      color: $button-disabled-color !important;
+    }
+  }
+
+  &.ghost {
+    background-color: #fff;
+    color: $button-color;
+  }
+}
+
+button.btn_flat,
+.btn_flat {
+  background-color: transparent;
+  color: $button-color;
+  border: none;
+  box-shadow: none;
+
+  &:hover {
+    background-color: color("grey", "lighten-4");
+  }
+}

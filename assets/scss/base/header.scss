@@ -1,0 +1,7 @@
+.header {
+  @include gutterize("padding");
+  height: $header-height;
+  width: 100%;
+  background-color: $black;
+  color: $white;
+}

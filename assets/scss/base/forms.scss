@@ -1,0 +1,72 @@
+.field {
+  input[type="text"],
+  input[type="password"],
+  select {
+    @include gutterize("margin-bottom");
+
+    border: solid 2px color("grey", "lighten-3");
+    border-radius: 5px;
+    height: 3rem;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    padding: 0 10px;
+
+    &:focus {
+      border: solid 2px $primary2-color;
+      outline: 0;
+    }
+  }
+
+  // https://css-tricks.com/styling-a-select-like-its-2019/
+  select {
+    display: inline-flex;
+    line-height: 1;
+    min-width: 8rem;
+    font-size: 1rem;
+    padding: 4px 8px;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23979797%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"),
+      linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right 0.7em top 50%, 0 0;
+    background-size: 0.65em auto, 100%;
+    appearance: none;
+    user-select: none;
+  }
+
+  label {
+    @include gutterize("padding-top");
+    padding-bottom: 1rem;
+    color: $off-black;
+    display: inline-flex;
+    font-size: 1rem;
+    opacity: 0.5;
+  }
+}
+
+.checkbox {
+  @include gutterize("margin-top", "margin-bottom", "margin-right");
+
+  display: inline-flex;
+  border: 1px solid color("grey", "lighten-2");
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  user-select: none;
+  cursor: pointer;
+
+  i {
+    margin: auto;
+    font-size: 16px;
+    font-weight: bold;
+    color: transparent;
+  }
+
+  &.checked {
+    background-color: $primary2-color;
+
+    i {
+      color: #fff;
+    }
+  }
+}

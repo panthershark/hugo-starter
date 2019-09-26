@@ -1,0 +1,27 @@
+div {
+  display: flex;
+}
+
+.section {
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+  @include gutterize("padding");
+  background-color: #fff;
+
+  @media #{$medium-and-up} {
+    @include gutterize("margin-top", "margin-bottom");
+    margin: 0 auto;
+    max-width: 1220px; // from the design
+  }
+
+  &.white {
+    background-color: rgba(256, 256, 256, 0.8);
+    @include zdepth($level: 1);
+  }
+}
+
+.main {
+  min-height: calc(100vh - #{$header-height} - #{$footer-height});
+  flex-direction: column;
+}
